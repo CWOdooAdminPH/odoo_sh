@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
+
     
     <record model="ir.ui.view" id="my_module.list">
       <field name="name">my_module list</field>
@@ -15,7 +15,6 @@
     </record>
     
 
-    <!-- actions opening views on models -->
     
     <record model="ir.actions.act_window" id="my_module.action_window">
       <field name="name">my_module window</field>
@@ -24,7 +23,6 @@
     </record>
     
 
-    <!-- server action to the one above -->
     
     <record model="ir.actions.server" id="my_module.action_server">
       <field name="name">my_module server</field>
@@ -40,17 +38,12 @@
     </record>
     
 
-    <!-- Top menu item -->
     
     <menuitem name="my_module" id="my_module.menu_root"/>
-    
-    <!-- menu categories -->
-    
     
     <menuitem name="Menu 1" id="my_module.menu_1" parent="my_module.menu_root"/>
     <menuitem name="Menu 2" id="my_module.menu_2" parent="my_module.menu_root"/>
     
-    <!-- actions -->
     
     <menuitem name="List" id="my_module.menu_1_list" parent="my_module.menu_1"
               action="my_module.action_window"/>
