@@ -1,6 +1,5 @@
 <odoo>
   <data>
-
     
     <record model="ir.ui.view" id="my_module.list">
       <field name="name">my_module list</field>
@@ -15,7 +14,6 @@
     </record>
     
 
-    
     <record model="ir.actions.act_window" id="my_module.action_window">
       <field name="name">my_module window</field>
       <field name="res_model">my_module.my_module</field>
@@ -40,6 +38,7 @@
 
     
     <menuitem name="my_module" id="my_module.menu_root"/>
+    
     
     <menuitem name="Menu 1" id="my_module.menu_1" parent="my_module.menu_root"/>
     <menuitem name="Menu 2" id="my_module.menu_2" parent="my_module.menu_root"/>
