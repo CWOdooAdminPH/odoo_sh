@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table[hasclass('o_main_table')]" position="before">
+            <p t-field="doc.header_html" t-if="doc.state in ['draft','sent']"/>
+        </xpath>
+        <xpath expr="//t[@t-if='not line.display_type']/.." position="after">
+            <tr class="html_description_section"
+                t-if="doc.state in ['draft','sent'] and not line.display_type and not line.is_empty_description_html">
+                <td colspan="100%"><div t-field="line.description_html"/></td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>

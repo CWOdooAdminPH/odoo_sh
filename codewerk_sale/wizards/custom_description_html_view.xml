@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_wizard_sol_description_html" model="ir.ui.view">
+        <field name="name">Advanced Description</field>
+        <field name="model">wizard.sol.description.html</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="product_id"/><br/>
+                    <label for="description_html" string="Advanced Description"/>
+                    <group name="advanced_description">
+                        <field name="description_html"
+                               nolabel="1"
+                               widget="html"
+                               placeholder="Enter your custom description here."/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_update_description_field"
+                            type="object"
+                            string="Update Description"
+                            class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_custom_description_html" model="ir.actions.act_window">
+        <field name="name">Advanced Description</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.sol.description.html</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_wizard_sol_description_html"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="timesheet_view_form_so_line_inherit" model="ir.ui.view">
+        <field name="name">timesheet.view.form.so.line.inherit</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="sale_timesheet_enterprise.timesheet_view_form_so_line_inherit"/>
+        <field name="arch" type="xml">
+            <field name="so_line" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

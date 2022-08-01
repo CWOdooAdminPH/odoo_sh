@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">view.order.form.inherited</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                <field name="description_html" invisible="1"/>
+                <button name="%(action_view_custom_description_html)d"
+                        type="action"
+                        icon="fa-edit"
+                        context="{
+                            'default_description_html': description_html,
+                            'default_id': active_id,
+                            'default_product_id': product_id,
+                        }"/>
+            </xpath>
+            <xpath expr="//group[@name='note_group']/div[hasclass('oe_clear')]" position="before">
+                <field name="header_html" class="oe-bordered-editor" nolabel="1" placeholder="Order header..."/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

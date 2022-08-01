@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sale_order_portal_content" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//section[@id='details']" position="before">
+            <section id="header_html" style="page-break-inside: auto;" class="mt32">
+                <h2 class="o_page_header"/>
+                <div t-esc="sale_order.header_html"/>
+            </section>
+        </xpath>
+        <xpath expr="//t[@t-if='not line.display_type']/.." position="after">
+            <tr class="html_description_section"
+                t-if="sale_order.state in ['draft','sent'] and not line.display_type and not line.is_empty_description_html">
+                <td colspan="100%"><div t-field="line.description_html"/></td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>
